@@ -41,7 +41,7 @@ class subnetez:
         '''
         self.wild = w        
         for n in range(0,4):
-            self.mask[n] = 255 - self.wild[n]
+            self.mask[n] = 255 - int(self.wild[n])
         self.setMask(self.getMask())
         
     
@@ -142,7 +142,7 @@ class subnetez:
             print a,self.getCidr(), self.getMask(), self.getWild(), self.getSize()
         
         
-        
+'''        
 i = subnetez()
 i.setSize(1000)
 i.printSubnet()
@@ -154,13 +154,14 @@ i.printSubnet()
 i = subnetez()
 i.setMask([255,255,252,0])
 i.printSubnet()
-
+'''
 i = subnetez()
 i.setWild([0,0,3,255])
+print i.getSize()
 i.printSubnet()
 
-i = subnetez()
-i.genMasks()
+#i = subnetez()
+#i.genMasks()
 
 
 
